@@ -1,0 +1,28 @@
+{
+  "name": "wppbot",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/marcusvbda/wppbot.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "crypto": "^1.0.1",
+    "events": "^3.3.0",
+    "fluent-ffmpeg": "^2.1.2",
+    "image-to-base64": "^2.1.1",
+    "mime": "^2.5.2",
+    "os": "^0.1.1",
+    "path": "^0.12.7",
+    "puppeteer": "^8.0.0",
+    "sharp": "^0.27.2"
+  }
+}
