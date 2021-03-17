@@ -123,10 +123,15 @@ class Client extends EventEmitter {
 
 		this.emit(Events.READY)
 	}
-	async sendMessage(chatId, content, options = {}) {
+
+	proccessChatId(chatId) {
 		if (chatId.indexOf("@c.u") == -1) {
 			chatId = `${chatId}@c.us`
 		}
+		return chatId
+	}
+
+	async sendMessage(chatId, content, options = {}) {
 		let internalOptions = {
 			linkPreview: options.linkPreview === false ? undefined : true,
 			sendAudioAsVoice: options.sendAudioAsVoice,
@@ -175,6 +180,19 @@ class Client extends EventEmitter {
 		}, chatId, content, internalOptions, sendSeen)
 
 		return new Message(this, newMessage)
+	}
+
+	async getAccountId(chatId) {
+		chatId = this.proccessChatId(chatId)
+		return await this.pupPage.evaluate(async (chatId) => {
+			let result = await window.Store.Wap.queryExist(chatId)
+			let isValid = result.jid !== undefined
+			let id = isValid ? `${result.jid.user}@${result.jid.server}` : undefined
+			return {
+				isValid,
+				id
+			}
+		}, chatId)
 	}
 }
 
