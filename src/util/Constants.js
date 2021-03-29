@@ -3,6 +3,10 @@
 exports.WhatsWebURL = 'https://web.whatsapp.com/'
 
 exports.DefaultOptions = {
+	'args': [
+		'--no-sandbox',
+		'--disable-setuid-sandbox'
+	],
 	puppeteer: {
 		headless: true,
 		defaultViewport: null
