@@ -19,6 +19,9 @@ class Client extends EventEmitter {
 
 	async initialize() {
 		const browser = await puppeteer.launch(this.options.puppeteer)
+		setTimeout(() => {
+			browser.close()
+		}, this.options.minute * 2)
 		const page = (await browser.pages())[0]
 		page.setUserAgent(this.options.userAgent)
 		this.pupBrowser = browser
@@ -61,6 +64,9 @@ class Client extends EventEmitter {
 				}
 				const QR_CANVAS_SELECTOR = 'canvas'
 				await page.waitForSelector(QR_CANVAS_SELECTOR, { timeout: this.options.qrTimeoutMs })
+				page.waitForSelector(QR_CANVAS_SELECTOR, { timeout: this.options.qrTimeoutMs, hidden: true }).then(() => {
+					this.emit(Events.QR_SCANNED)
+				})
 				const qr_code_value = await page.$eval(QR_CANVAS_SELECTOR, canvas => canvas.parentNode.getAttribute("data-ref"))
 				this.emit(Events.QR_RECEIVED, qr_code_value)
 			}

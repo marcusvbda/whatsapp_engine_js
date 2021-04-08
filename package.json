@@ -1,19 +1,33 @@
 {
-  "name": "whatsapp_engine_js",
-  "version": "1.0.4",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node index.js"
+  "_from": "whatsapp_engine_js@1.0.4",
+  "_id": "whatsapp_engine_js@1.0.4",
+  "_inBundle": false,
+  "_integrity": "sha512-ncQTXag99lz9vKFojZ2jHtlEfw+8Mb3I/smGJDmouRKNLHEzpfGC2GiyswIP8adp3u6aXxXPu09aGDfh/KSHdQ==",
+  "_location": "/whatsapp_engine_js",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "version",
+    "registry": true,
+    "raw": "whatsapp_engine_js@1.0.4",
+    "name": "whatsapp_engine_js",
+    "escapedName": "whatsapp_engine_js",
+    "rawSpec": "1.0.4",
+    "saveSpec": null,
+    "fetchSpec": "1.0.4"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/marcusvbda/wppbot.git"
-  },
-  "keywords": [],
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/whatsapp_engine_js/-/whatsapp_engine_js-1.0.4.tgz",
+  "_shasum": "edfbab8ade835f47ffa5c7da2c3bd25bc0f3e237",
+  "_spec": "whatsapp_engine_js@1.0.4",
+  "_where": "D:\\wamp64\\www\\wpp-api",
   "author": "",
-  "license": "ISC",
-  "description": "",
+  "bugs": {
+    "url": "https://github.com/marcusvbda/wppbot/issues"
+  },
+  "bundleDependencies": false,
   "dependencies": {
     "crypto": "^1.0.1",
     "events": "^3.3.0",
@@ -24,5 +38,21 @@
     "path": "^0.12.7",
     "puppeteer": "^8.0.0",
     "sharp": "^0.27.2"
-  }
+  },
+  "deprecated": false,
+  "description": "",
+  "homepage": "https://github.com/marcusvbda/wppbot#readme",
+  "keywords": [],
+  "license": "ISC",
+  "main": "index.js",
+  "name": "whatsapp_engine_js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/marcusvbda/wppbot.git"
+  },
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "version": "1.0.4"
 }
